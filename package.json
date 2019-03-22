@@ -1,0 +1,16 @@
+{
+  "name": "primera_entrega",
+  "version": "1.0.1",
+  "description": "Entrega 1 curso Node",
+  "main": "E1.main.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Isabel",
+  "license": "ISC"
+}
