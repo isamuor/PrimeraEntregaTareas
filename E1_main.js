@@ -1,5 +1,7 @@
 const fs = require('fs')
 const courses = require('./DB_cursos');
+const express = require('express')
+const app = express()
 
 let cursos = courses.cursos;
 
@@ -47,10 +49,15 @@ if (DeseaInscripcion === 'inscribir') {
         texto = ` La información del curso solicitado es:\n
  id: ${cursoID.id} \n Nombre: ${cursoID.nombre} \n Duración: ${cursoID.duracion} semanas \n Valor: $ ${cursoID.valor} \n
  La información del interesado es: \n \n Nombre del estudiante: ${argv.estudiante} \n Cédula: ${argv.cedula}`
-        fs.writeFile('InformacionInteres.txt', texto, (err) => {
-            if (err) throw (err);
-            console.log('El archivo de interés se ha creado')
-        });
+        app.get('/', function(req, res) {
+            res.send(texto)
+        })
+
+        app.listen(3000)
+            /*fs.writeFile('InformacionInteres.txt', texto, (err) => {
+                if (err) throw (err);
+                console.log('El archivo de interés se ha creado')
+            });*/
 
     })
 } else {
